@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DERMOLYXA™ Design System — Tailwind v4 theme tokens
+   ============================================================ */
+@theme {
+  /* Typography */
+  --font-heading: "Playfair Display", ui-serif, Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --text-display: 3.75rem;
+  --text-display--line-height: 1.05;
+  --text-hero: 2.75rem;
+  --text-hero--line-height: 1.1;
+
+  /* Brand palette */
+  --color-primary: #0f3d4c;
+  --color-primary-700: #0b2f3b;
+  --color-primary-600: #0f3d4c;
+  --color-primary-500: #155263;
+  --color-primary-400: #2c6c7d;
+
+  --color-accent: #c9a66b;
+  --color-accent-600: #b28f4f;
+  --color-accent-soft: #ddc9a3;
+
+  --color-tint: #e8f3f3;
+  --color-tint-200: #d3e7e7;
+
+  --color-ink: #1b2a33;
+  --color-muted: #5b6b75;
+
+  --color-surface: #ffffff;
+  --color-surface-alt: #f6f9fb;
+  --color-line: #e2e8ed;
+
+  --color-success: #2f7d6b;
+  --color-whatsapp: #25d366;
+
+  /* Spacing scale tokens */
+  --spacing-section: 5rem;
+  --spacing-section-lg: 6.5rem;
+  --spacing-gutter: 1.5rem;
+
+  /* Radius */
+  --radius-card: 1rem;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-soft: 0 10px 30px -14px rgba(15, 61, 76, 0.22);
+  --shadow-card: 0 18px 45px -22px rgba(15, 61, 76, 0.28);
+  --shadow-gold: 0 14px 34px -16px rgba(201, 166, 107, 0.55);
+
+  /* Animations */
+  --animate-marquee: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-primary);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-accent-600);
+  }
+}
+
+/* Thin, refined scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-tint-200) transparent;
+}
